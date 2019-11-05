@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EventTribeThp</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <title>EventtribeThp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-around" style="background-color: #74D6FA;">
+      <a class="navbar-brand" href="<%= root_path %>">EVENT.TRIBE.THP</a>
+      <a class="py-2 d-none d-md-inline-block" href="">Create Event</a>
+      <ul>
+        <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            Voici ton email : <%= current_user.email %>
+            <%= link_to "Secret page", static_pages_secret_path %>
+            <%= link_to "Edit email / password", edit_user_registration_path %>
+        <% else %>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #74A3FA;">
+                Sign-in / Sign-up
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="<%= new_user_session_path %>">Sign in</a>
+                <a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a>
+              </div>
+            </div> 
+        <% end %>
+      </ul>
+    </nav>
+    <div class="text-center">
     <%= yield %>
+    </div>
   </body>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>
+
