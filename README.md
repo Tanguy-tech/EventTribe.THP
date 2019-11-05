@@ -13,3 +13,6 @@ Things you may want to cover:
 * Database initialization progsql
 
 * How to run : clone repo onto your machien then run bundle install / rake db: create / rake db:migrate / rake db:seed 
+
+
+lien appli Heroku : https://eventtribethp.herokuapp.com/
