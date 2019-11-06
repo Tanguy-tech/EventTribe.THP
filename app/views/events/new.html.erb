@@ -1,0 +1,33 @@
+<body>
+    <h1>Create a New event</h1>
+    <% form_for @event do |f|%>
+        <input type="hidden" name="authenticity_token" value= <%= form_authenticity_token %> >
+        <div class="form-group">
+            <label>Name the Event</label>
+            <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+            <label>How much is cost?</label>
+            <%= f.text_field :price, class: 'form-control' %>
+        </div> 
+        <div class="form-group">
+            <label>What is it about?</label>
+            <%= f.text_area :description, class: 'form-control' %>
+        </div>  
+        <div class="form-group">
+            <label>When does it begin?</label>
+            <%= f.text_field :start_date, class: 'form-control' %>
+        </div> 
+        <div class="form-group">
+            <label>How long it last?</label>
+            <%= f.text_field :duration, class: 'form-control' %>
+        </div> 
+        <div class="form-group">
+            <label>Where does it take place?</label>
+            <%= f.text_field :location, class: 'form-control' %>
+        </div>  
+        <div class="form-group"> 
+            <button type="submit" class="btn btn-warning">Create the Event</button>
+        </div>  
+    <% end %>  
+</body>

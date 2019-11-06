@@ -1,1 +1,25 @@
-<h1>STATICS_PAGES</h1>
+<body>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=778&q=80'); background-repeat: no-repeat; background-size: cover;">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal" style="font-family: OCR A Std, monospace; color:#00478E;">The Events Organisation Reference</h1></h1>
+            <p class="lead font-weight-normal" style="font-family: OCR A Std, monospace; color:#00478E;">Plan, Set-up, Organise, Remind people, and Master any kind of Events</p>
+        </div>
+    </div>
+    <div class="index-title" style="font-family: OCR A Std, monospace; color:#00478E;">
+        <h3>Check all the Events near you ! </h3>
+    </div>
+    <div class="card-deck" style="margin-left: 5%;">
+        <%= @event.each do |e| %>
+            <div class="card-deck col-sm-4 mb-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header"><%= e.title %></div>
+                    <div class="card-body text-info">
+                        <h4 class="card-title">Price <%= e.price %> $</h4>
+                        <p class="card-text"> Where : <%= e.location %></p>
+                        <p class="card-text"> About it : <%= e.description %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</body>

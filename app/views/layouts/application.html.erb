@@ -14,10 +14,10 @@
     <link href="product.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color: #B98CE5;">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-around" style="background-color: #74D6FA;">
-      <a class="navbar-brand" href="<%= root_path %>">EVENT.TRIBE.THP</a>
-      <a class="py-2 d-none d-md-inline-block" href="">Create Event</a>
+      <a class="navbar-brand" style="color:#3737F4; font-family: Jazz LET, fantasy;"href="<%= root_path %>">EVENT.TRIBE.THP</a>
+      <a class="py-2 d-none d-md-inline-block" href="<%= new_event_path %>">Create Event</a>
       <ul>
         <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -26,7 +26,7 @@
             <%= link_to "Edit email / password", edit_user_registration_path %>
         <% else %>
             <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #74A3FA;">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #74A3FA; border: none; margin-top: 10px;">
                 Sign-in / Sign-up
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -36,8 +36,9 @@
             </div> 
         <% end %>
       </ul>
+      <a class="py-2 d-none d-md-inline-block" href="<%= static_pages_contact_path %>">Contacts</a>
     </nav>
-    <div class="text-center">
+    <div class="text-center" style="background-color: #B98CE5;">
     <%= yield %>
     </div>
   </body>
