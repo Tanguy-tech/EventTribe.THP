@@ -1,33 +1,35 @@
 <body>
-    <h1>Create a New event</h1>
-    <% form_for @event do |f|%>
+    <h1 style="font-family: OCR A Std, monospace; color:#00478E;">Create a New event</h1>
+    <div style="margin-left: 10%; background-image: url('https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80'); background-repeat: no-repeat; background-position: 85% 45%;" align="left">
+    <%= form_for @event do |f|%>
         <input type="hidden" name="authenticity_token" value= <%= form_authenticity_token %> >
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 80%;">
             <label>Name the Event</label>
             <%= f.text_field :title, class: 'form-control' %>
         </div>
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 85%;">
             <label>How much is cost?</label>
             <%= f.text_field :price, class: 'form-control' %>
         </div> 
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 65%;">
             <label>What is it about?</label>
             <%= f.text_area :description, class: 'form-control' %>
         </div>  
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 80%;">
             <label>When does it begin?</label>
             <%= f.text_field :start_date, class: 'form-control' %>
         </div> 
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 80%;">
             <label>How long it last?</label>
             <%= f.text_field :duration, class: 'form-control' %>
         </div> 
-        <div class="form-group">
+        <div class="form-group" style=" margin-right: 70%;">
             <label>Where does it take place?</label>
             <%= f.text_field :location, class: 'form-control' %>
         </div>  
         <div class="form-group"> 
             <button type="submit" class="btn btn-warning">Create the Event</button>
         </div>  
-    <% end %>  
+    <% end %> 
+    </div> 
 </body>
