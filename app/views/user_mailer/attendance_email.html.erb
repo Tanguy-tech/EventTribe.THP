@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey there <%= @user.first_name %>, you just signed up to  <%= @user.events.last.title %>.</h1>
+    <p>
+      To go check it out, go to : <%= @url %>.
+    </p>
+    <p> see you soon on monsite.fr !
+  </body>
+</html>

@@ -17,6 +17,8 @@
                         <h4 class="card-title">Price <%= e.price %> $</h4>
                         <p class="card-text"> Where : <%= e.location %></p>
                         <p class="card-text"> About it : <%= e.description %></p>
+                        <a href="<%= event_path(e.id) %>" <button type="button" class="btn btn-outline-warning" >Voir plus</button></a>
+                        <a href="<%= event_path(e.id) %>" <button type="button" class="btn btn-outline-danger" data-confirm="Are you sure you want to cancel this event?" data-method="DELETE">Cancel Event</button></a>
                     </div>
                 </div>
             </div>

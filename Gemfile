@@ -67,3 +67,5 @@ gem 'table_print'
 gem 'faker'
 gem 'devise'
 gem 'simple_form'
+gem 'stripe'
+gem "administrate"
